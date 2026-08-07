@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GeraQuiz</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- ============================= -->
+<!-- MENU PRINCIPAL -->
+<!-- ============================= -->
+
+<section id="home">
+
+    <div class="logo">
+
+        <h1>🎮 GeraQuiz</h1>
+
+        <p>
+            O Quiz que une gerações.
+        </p>
+
+    </div>
+
+    <div class="menu">
+
+        <button id="btnStart">
+            Jogar
+        </button>
+
+        <button id="btnTutorial">
+            Tutorial
+        </button>
+
+        <button id="btnRanking">
+            Ranking
+        </button>
+
+        <button id="btnSettings">
+            Configurações
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ============================= -->
+<!-- CONFIGURAÇÃO -->
+<!-- ============================= -->
+
+<section id="setup"
+         class="hidden">
+
+<h2>Nova Partida</h2>
+
+<label>
+
+Quantidade de jogadores
+
+<select id="playerCount">
+
+<option value="2">2</option>
+
+<option value="3">3</option>
+
+<option value="4">4</option>
+
+<option value="5">5</option>
+
+<option value="6">6</option>
+
+</select>
+
+</label>
+
+<div id="playersArea">
+
+</div>
+
+<button id="btnCreateGame">
+
+Começar
+
+</button>
+
+</section>
+
+<!-- ============================= -->
+<!-- ÁREA DO JOGO -->
+<!-- ============================= -->
+
+<section id="game"
+         class="hidden">
+
+<header>
+
+<div>
+
+<h2 id="playerName">
+
+Jogador
+
+</h2>
+
+<p id="playerLevel">
+
+Nível 1
+
+</p>
+
+</div>
+
+<div>
+
+<span id="score">
+
+0
+
+</span>
+
+pts
+
+</div>
+
+</header>
+
+<div class="timer">
+
+<div id="timerBar">
+
+</div>
+
+</div>
+
+<div class="category">
+
+Categoria
+
+</div>
+
+<div class="question">
+
+Pergunta aparecerá aqui...
+
+</div>
+
+<div id="answers">
+
+</div>
+
+<div class="bottom">
+
+<button id="nextQuestion">
+
+Próxima
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ============================= -->
+<!-- RESULTADO -->
+<!-- ============================= -->
+
+<section id="results"
+         class="hidden">
+
+<h2>
+
+🏆 Resultado Final
+
+</h2>
+
+<div id="rankingList">
+
+</div>
+
+<button id="restart">
+
+Nova Partida
+
+</button>
+
+</section>
+
+<!-- ============================= -->
+<!-- TUTORIAL -->
+<!-- ============================= -->
+
+<section id="tutorial"
+         class="hidden">
+
+<h2>
+
+Como Jogar
+
+</h2>
+
+<ul>
+
+<li>Escolha entre 2 e 6 jogadores.</li>
+
+<li>Cada rodada sorteia uma categoria.</li>
+
+<li>Responda antes do tempo acabar.</li>
+
+<li>Acertos dão pontos e XP.</li>
+
+<li>Sequências aumentam o multiplicador.</li>
+
+<li>Conquistas liberam medalhas.</li>
+
+<li>Quem tiver mais pontos vence.</li>
+
+</ul>
+
+<button id="closeTutorial">
+
+Voltar
+
+</button>
+
+</section>
+
+<!-- ============================= -->
+<!-- CONFIGURAÇÕES -->
+<!-- ============================= -->
+
+<section id="settings"
+         class="hidden">
+
+<h2>
+
+Configurações
+
+</h2>
+
+<label>
+
+<input type="checkbox"
+       id="darkMode">
+
+Modo Escuro
+
+</label>
+
+<label>
+
+<input type="checkbox"
+       id="soundToggle"
+       checked>
+
+Sons
+
+</label>
+
+<label>
+
+Tempo
+
+<select id="gameTime">
+
+<option value="10">10 s</option>
+
+<option value="15" selected>15 s</option>
+
+<option value="20">20 s</option>
+
+<option value="30">30 s</option>
+
+</select>
+
+</label>
+
+<button id="saveSettings">
+
+Salvar
+
+</button>
+
+</section>
+
+<!-- ============================= -->
+<!-- POPUP DE ACHIEVEMENT -->
+<!-- ============================= -->
+
+<div id="achievementPopup"
+     class="hidden">
+
+🏅 Nova Conquista!
+
+</div>
+
+<!-- ============================= -->
+<!-- LEVEL UP -->
+<!-- ============================= -->
+
+<div id="levelPopup"
+     class="hidden">
+
+⭐ Level Up!
+
+</div>
+
+<!-- ============================= -->
+<!-- CONFETE -->
+<!-- ============================= -->
+
+<canvas id="confetti">
+
+</canvas>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
